@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2020"
+    ],
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // 可能な限り厳密に型チェックするようにする
+    "strict": true,
+    // ソースマップファイルを生成する
+    "sourceMap": true,
+    // .jsはgen/proto配下で使用する
+    "allowJs": true,
+  },
+}

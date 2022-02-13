@@ -1,0 +1,27 @@
+{
+  "name": "bidirectional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "protoc": "make gen",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start-server": "node dist/server/index.js",
+    "start-client": "node dist/client/index.js ${name}"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.5",
+    "@types/node": "^17.0.17",
+    "grpc-tools": "^1.11.2",
+    "ts-node": "^10.5.0",
+    "ts-protoc-gen": "^0.15.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.5",
+    "moment": "^2.29.1"
+  }
+}

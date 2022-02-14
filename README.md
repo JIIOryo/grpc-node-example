@@ -34,3 +34,32 @@ $ npm run start-server
 ```shell
 $ npm run start-client (name)
 ```
+
+## unary
+
+Unary RPCを利用したシンプルな計算アプリです。
+
+[src](./unary)
+
+### setup
+
+```shell
+$ cd unary/
+
+$ npm ci
+$ npm run protoc # コミット済
+$ npm run build
+```
+### server
+
+```shell
+$ npm run start-server
+```
+
+### client
+
+```shell
+$ npm run client:add 3 7
+
+3 + 7 = 10
+```

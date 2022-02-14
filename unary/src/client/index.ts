@@ -6,7 +6,7 @@ import * as CalcPb from '../gen/proto/calc_pb'
 
 const SERVER_PORT = 50051
 
-const calcRequest = async (client: CalcGrpcPb.CalcClient, a: number, b: number): Promise<number> => {
+const addRequest = async (client: CalcGrpcPb.CalcClient, a: number, b: number): Promise<number> => {
   const request = new CalcPb.AddRequest()
   request.setA(a)
   request.setB(b)
@@ -45,7 +45,7 @@ const main = async () => {
     grpc.credentials.createInsecure(),
   )
 
-  const result = await calcRequest(client, a, b)
+  const result = await addRequest(client, a, b)
   console.log(`${a} + ${b} = ${result}`)
 
   client.close()

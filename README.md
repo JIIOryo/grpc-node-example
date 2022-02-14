@@ -2,7 +2,7 @@
 Node.jsでgRPCを利用するサンプルリポジトリ
 
 
-## bidirectional
+# bidirectional
 
 Bidirectional Streaming RPCを利用したリアルタイムチャットアプリです。
 
@@ -35,7 +35,7 @@ $ npm run start-server
 $ npm run start-client (name)
 ```
 
-## unary
+# unary
 
 Unary RPCを利用したシンプルな計算アプリです。
 

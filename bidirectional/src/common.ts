@@ -13,6 +13,7 @@ export const COLOR = {
 export const SERVER_PORT = 50051
 export const SERVER_NAME = 'ChatServer'
 export const QUIT_COMMAND = 'quit'
+export const STAMP_COMMAND = 'stamp'
 export const getPrompt = (user: string) => `${COLOR.GREEN}${user}${COLOR.RESET} >>> `
 
 export const log = (msg: string) => {

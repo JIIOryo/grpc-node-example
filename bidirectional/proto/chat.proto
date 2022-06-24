@@ -2,9 +2,15 @@ syntax = "proto3";
 
 service Chat {
   rpc chat(stream ChatMessage) returns (stream ChatMessage) {}
+  rpc stamp(stream StampMessage) returns (stream StampMessage) {}
 }
 
 message ChatMessage {
   string from = 1;
   string message = 2;
+}
+
+message StampMessage {
+  string from = 1;
+  string stamp_id = 2;
 }

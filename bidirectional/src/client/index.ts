@@ -33,6 +33,7 @@ const main = () => {
   })
 
   const call = client.chat()
+  const call2 = client.stamp()
 
   call.on('data', (ChatMessage: ChatPb.ChatMessage) => {
     const from = ChatMessage.getFrom()
@@ -55,6 +56,15 @@ const main = () => {
     rl.prompt()
   })
 
+  call2.on('data', (StampMessage: ChatPb.StampMessage) => {
+    const from = StampMessage.getFrom()
+    const stampId = StampMessage.getStampId()
+
+    common.log(`${common.COLOR.GREEN}${from}${common.COLOR.RESET}: ${common.COLOR.MAGENTA}${stampId}${common.COLOR.RESET}`)
+
+    rl.prompt()
+  })
+
   call.on('end', () => {
     printChatEndMessage()
     call.end()
@@ -70,6 +80,17 @@ const main = () => {
 
     if (!msg) {
       rl.prompt()
+      return
+    }
+
+    // stamp送信の場合
+    if (msg.startsWith(common.STAMP_COMMAND)) {
+      const stampId = msg.split(' ')[1]
+
+      const StampMessage = new ChatPb.StampMessage()
+      StampMessage.setFrom(user)
+      StampMessage.setStampId(stampId)
+      call2.write(StampMessage)
       return
     }
 
